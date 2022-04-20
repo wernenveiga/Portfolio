@@ -1,0 +1,179 @@
+:root {
+    --body-bg-color: #22212C;
+    --text-color: #837E9F;
+    --bg-cards: #302F3D;
+    --bg-techs: #CB92B1;
+}
+body{
+    background-color: #22212C;
+    display: grid;
+    grid-template-areas: 
+        "perfil projetos"
+    ;
+    grid-template-columns: 30% 70%;
+}
+
+aside{
+    grid-area: "perfil";
+}
+main{
+    grid-area: "projetos";
+}
+.perfil{
+    width: auto;
+    height: auto;
+    left: 40px;
+    top: 40px;
+    margin: 20px;
+    background-color: #302F3D;
+    color: #837E9F;
+    border-radius: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.perfil img{
+    width: 128px;
+    height: 128x;
+    border-radius: 100%;
+}
+.contato{
+    display: grid;
+    grid-template-areas: "icone info";
+    grid-template-columns: 50px 300px;
+    width: auto;
+    height: auto;
+    margin: 20px;
+    background-color: #302F3D;
+    color: #837E9F;
+    border-radius: 20px;
+    font-family: sans-serif;
+    padding: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #837E9F;
+}
+.icons{
+    grid-area: "icone";
+}
+.infos{
+    grid-area: "info";
+    font-size: 1em;
+    line-height: 2em;
+}
+.tecnologias{
+    
+    width: auto;
+    height: auto;
+    margin: 20px;
+    background-color: #302F3D;
+    color: #837E9F;
+    border-radius: 20px;
+    font-family: sans-serif;
+    padding: 30px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    text-align: center;
+}
+.tec{
+    display: inline-block;
+    background-color: #CB92B1;
+    border-radius: 5px;
+    color: #22212C;
+    margin:3px;
+    padding: 3px;
+}
+.experiencia{
+    width: auto;
+    height: auto;
+    margin: 20px;
+    padding: 30px;
+    background-color: #302F3D;
+    color: #837E9F;
+    border-radius: 20px;
+    font-family: sans-serif;
+    text-align: justify;
+
+}
+.experiencia ul{
+    list-style-type: square;
+    line-height: 1.2em;
+}
+
+.projects{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    background-color: #302F3D;
+    color: #837E9F;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+.github{
+    display: grid;
+    grid-template-areas: "card card2";
+    grid-template-columns: 50% 50%;
+}
+
+.card{
+    background-color: #302F3D;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+    color:#837E9F;
+    font-family: sans-serif;
+    
+}
+.card p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.rodape-card{
+    display: flex;
+    justify-content: space-between;    
+}
+.titulo-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+
+.titulo-card > div{
+    margin: 2px;
+}
+.post{
+    background-color: #302F3D;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+    color: #837E9F;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-areas: "foto post";
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+.post img{
+    margin: 20px;
+    width: 98px;
+    height: 98px;
+    border-radius: 100%;
+}
+.texto-pub{
+    grid-area: "post";
+    margin: 0 40px;
+}
