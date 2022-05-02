@@ -32,10 +32,12 @@ main{
     font-family: sans-serif;
     padding: 30px;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
 }
 .perfil img{
     width: 128px;
     height: 128x;
+    border: 2px solid #837E9F;
     border-radius: 100%;
 }
 .contato{
@@ -66,7 +68,7 @@ a{
 .infos{
     grid-area: "info";
     font-size: 1em;
-    line-height: 2em;
+    line-height: 1.7em;
 }
 .tecnologias{
     
@@ -134,8 +136,101 @@ a{
     padding: 30px;
     color:#837E9F;
     font-family: sans-serif;
-    
 }
+.slider{
+    margin: 0 auto;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+}
+.slides{
+    width: 400%;
+    height: 300px;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 200px;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 200px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #CB92B1;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.manual-btn:hover{
+    background-color: #CB92B1;
+}
+
+#radio1:checked ~.first{
+    margin-left: 0;
+}
+#radio2:checked ~.first{
+    margin-left: -25%;
+}
+#radio3:checked ~.first{
+    margin-left: -50%;
+}
+#radio4:checked ~.first{
+    margin-left: -75%;
+}
+
+.navigation-auto div{
+    border: 2px solid #837E9F;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute ;
+    width: 200px;
+    margin-top: 260px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 20px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #CB92B1;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #CB92B1;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #CB92B1;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: #CB92B1;
+}
+
 .card p{
     white-space: nowrap;
     overflow: hidden;
@@ -176,4 +271,155 @@ a{
 .texto-pub{
     grid-area: "post";
     margin: 0 40px;
+}
+.ativa-modal{
+    cursor: pointer;
+}
+
+.modal{
+    padding: 20px;
+    width: 700px;
+    height: 500px;
+    background-color: #837E9F;
+    position: fixed;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animate;
+    animation-duration: 800ms;
+
+}
+
+@keyframes animate{
+
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
+
+.conteudo-modal{
+    color: #22212C;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+#itens-modal{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    /*-webkit-overflow-scrolling: touch;*/
+    scroll-behavior: smooth;
+}
+.item{
+    flex: none;
+    width: 42%;
+    height: 450px;
+    scroll-snap-align: start;
+    pointer-events: none;
+}
+.conteudo-modal img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fechar{
+    margin: 5px;
+    padding: auto;
+    width: 30px;
+    height: 30px;
+    background-color: #22212C;
+    border-radius: 20px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-family: sans-serif;
+}
+.fechar p{
+    margin: 6px;
+    color: #CB92B1;
+}
+@media only screen and (max-width:728px) {
+    body{
+        display: block ;
+    }
+    .perfil{
+        display: grid;
+        margin: 10px auto;
+        grid-template-areas: "foto info";
+        align-items: center;
+        text-align:start;
+        font-size: auto;
+    }
+    .perfil img{
+        width: 80px;
+        height: 80x;
+        border-radius: 100%;
+    }
+
+    .info-perfil{
+        margin: auto 10px;
+    }
+    .contato{
+        margin: 10px auto;
+        font-size: small;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons svg{
+        height: 1.5em;       
+    }
+    .tecnologias{
+        margin: 10px auto;
+        padding: 30px;
+        font-size: small;
+    }
+    .tec{
+        font-size: auto;
+    }
+    .experiencia{
+        margin: 10px auto;
+        padding: 10px 30px;
+        text-align: left;
+        font-size: small;
+    }
+    .github{
+        display: block;
+    }
+    .projects{
+        margin: 10px auto;
+        padding: 10px;
+        font-size: medium;
+    }
+    .card{
+        margin: 10px;
+        padding: 10px;
+    }
+    .post{
+        margin: 15px;
+        padding: 10px;
+        align-items: flex-start;
+        grid-template-columns: 40px 1fr;
+        font-size: small;
+    }
+    
+    .post img{
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+    }
+    .texto-pub{
+        margin: 0 10px;
+        align-items: flex-start;
+    }
+    .modal{
+        margin: 0 10px;
+        position:fixed;
+        width: 80%;
+    }
+    .item{
+        width: 90%;
+    }
 }
